@@ -2,6 +2,7 @@ import './App.css';
 
 import {useState,useEffect} from "react";
 import Articles from './components/Articles.js';
+import Main from './styles/main';
 
 //url
 let url = "https://storage.googleapis.com/aller-structure-task/test_data.json";
@@ -20,6 +21,7 @@ useEffect(()=>{
 },[]);
   return (
     <div className="App">
+      <Main>
       {/* Her mapper jeg igjennom array som har data fra api */}
      {json?.length > 0 ? json.map((art)=>{
       
@@ -34,6 +36,7 @@ useEffect(()=>{
         })}
       </section>
      }) : null}
+     </Main>
     </div>
   );
 }
